@@ -1,0 +1,154 @@
+
+
+
+local BlekLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/laderite/bleklib/main/library.lua"))()
+
+
+
+
+local win = BlekLib:Create({
+	Name = "Devil Hack | +1 Jump Every Second",
+	StartupSound = {
+		Toggle = true,
+		SoundID = "rbxassetid://178038408",
+		TimePosition = 1
+	}
+})
+
+
+
+local maintab = win:Tab('Main')
+local TPStab = win:Tab('TPS')
+local misctab = win:Tab('Misc')
+local uitab = win:Tab('Settings')
+
+
+--Main
+maintab:Toggle('Autofarm', function(autofarm)
+	getgenv().lol = autofarm
+end)
+	game.RunService.Heartbeat:Connect(function()
+		if getgenv().lol then
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1214.72278, 115270.609, 8270.98145, 0, 0, -1, -1, 0, 0, 0, 1, 0)
+		end
+	end)
+
+
+	maintab:Button('Double Jump', function()
+
+		local l__UserInputService__1 = game:GetService("UserInputService");
+		local l__LocalPlayer__2 = game.Players.LocalPlayer;
+		local u1 = nil;
+		local u2 = nil;
+		local u3 = false;
+		local u4 = false;
+		local u5 = nil;
+		function onJumpRequest()
+			if u1 then
+				if u2 then
+					if u1:IsDescendantOf(workspace) then
+						if u2:GetState() == Enum.HumanoidStateType.Dead then
+
+						else
+							if u3 then
+								if not u4 then
+									u4 = true;
+									u2.JumpPower = u5 * 1.1;
+									u2:ChangeState(Enum.HumanoidStateType.Jumping);
+								end;
+							end;
+							return;
+						end;
+					end;
+				end;
+			end;
+		end;
+		if l__LocalPlayer__2.Character then
+			local l__Character__3 = l__LocalPlayer__2.Character;
+			u1 = l__Character__3;
+			u2 = l__Character__3:WaitForChild("Humanoid");
+			u4 = false;
+			u3 = false;
+			u5 = u2.JumpPower;
+			u2.StateChanged:connect(function(p1, p2)
+				if p2 == Enum.HumanoidStateType.Landed then
+					u3 = false;
+					u4 = false;
+					u2.JumpPower = u5;
+					return;
+				end;
+				if p2 == Enum.HumanoidStateType.Freefall then
+					task.wait(0.2);
+					u3 = true;
+				end;
+			end);
+		end;
+		l__LocalPlayer__2.CharacterAdded:connect(function(p3)
+			u1 = p3;
+			u2 = p3:WaitForChild("Humanoid");
+			u4 = false;
+			u3 = false;
+			u5 = u2.JumpPower;
+			u2.StateChanged:connect(function(p4, p5)
+				if p5 == Enum.HumanoidStateType.Landed then
+					u3 = false;
+					u4 = false;
+					u2.JumpPower = u5;
+					return;
+				end;
+				if p5 == Enum.HumanoidStateType.Freefall then
+					task.wait(0.2);
+					u3 = true;
+				end;
+			end);
+		end);
+		l__UserInputService__1.JumpRequest:connect(onJumpRequest);
+	end)
+	maintab:Button('Get VIP Tower', function()
+		game:GetService("Workspace").RainbowJump:Destroy()
+		wait(0.1)
+		game:GetService("Workspace").SpecialZones.VIPTower:Destroy()
+	end)
+
+
+
+	TPStab:Button('Rainbow Tower', function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1.30000687, 7346.93457, 8024.1665, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+	end)
+	TPStab:Button('Candy Tower', function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(163.53894, 10792.1377, 8023.25195, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+	end)
+	TPStab:Button('Lava Tower', function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(313.549133, 13925.7812, 8039.60205, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+	end)
+	TPStab:Button('Moon Tower', function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(461.9935, 18411.793, 8064.4165, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+	end)
+	TPStab:Button('Beach Tower', function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(612.363281, 24593.5566, 8066.09717, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+	end)
+	TPStab:Button('Christmas Tower', function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(760.49884, 42510.4414, 8095.78125, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+	end)
+	TPStab:Button('Void Tower', function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(913.112, 66137.2734, 8192.7002, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+	end)
+	TPStab:Button('Golden Tower', function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1063.31848, 92752.6484, 8274.1416, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+	end)
+	TPStab:Button('Horror Tower', function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1211.46606, 123462.695, 8277.49219, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+	end)
+misctab:Label('If Problem turn off and on')
+misctab:Toggle('WalkSpeed Toggle', function(v)
+    _G.WalkSpeed = v
+end)
+misctab:Textbox('WalkSpeed', function(walkspeed)
+   while  _G.WalkSpeed == true do
+      wait()
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = walkspeed
+	end
+end)
+	uitab:Button('Destroy GUI', function()
+		win:Exit()
+	end)
